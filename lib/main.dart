@@ -35,18 +35,18 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  late bool _visible;
+  late bool bottomBarVisible;
 
   @override
   void initState() {
     super.initState();
-    _visible = true;
+    bottomBarVisible = true;
   }
 
   @override
   Widget build(BuildContext context) {
-    final _pageController = PageController(initialPage: 0);
-    final _controller = NotchBottomBarController(index: 0);
+    final _pageController = PageController(initialPage: 2);
+    final _controller = NotchBottomBarController(index: 2);
 
     final List<Widget> bottomBarPages = [
       InfoScreen(),
@@ -62,22 +62,20 @@ class _MainPageState extends State<MainPage> {
         actions: [
           TextButton(onPressed: () {
             setState(() {
-              print(_visible);
-              _visible = !_visible;
-              print(_visible);
+              bottomBarVisible = !bottomBarVisible;
             });
           }, child: Text("SWITCH"))
         ],
       ),
       extendBody: true,
       bottomNavigationBar: Visibility(
-        visible: _visible,
+        visible: bottomBarVisible,
         child: AnimatedNotchBottomBar(
           key: UniqueKey(),
           showShadow: true,
           showBlurBottomBar: true,
-          blurFilterX: 5,
-          blurFilterY: 5,
+          blurFilterX: 2,
+          blurFilterY: 2,
           blurOpacity: 0.1,
           durationInMilliSeconds: 300,
           notchBottomBarController: _controller,
@@ -87,11 +85,11 @@ class _MainPageState extends State<MainPage> {
           bottomBarItems: const [
             BottomBarItem(
               inActiveItem: Icon(
-                Icons.newspaper,
+                Icons.description,
                 color: Colors.black87,
               ),
               activeItem: Icon(
-                Icons.newspaper,
+                Icons.description,
                 color: Colors.black,
               ),
               itemLabel: 'Info',
