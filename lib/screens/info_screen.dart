@@ -10,6 +10,6 @@ class InfoScreen extends StatefulWidget {
 class _InfoScreenState extends State<InfoScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: const Text("InfoScreen"));
+    return Center(child: Text("INFO herre"),);
   }
 }

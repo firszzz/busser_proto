@@ -58,14 +58,13 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text("Busser – Трансфер-Такси"),
-        actions: [
-          TextButton(onPressed: () {
-            setState(() {
-              bottomBarVisible = !bottomBarVisible;
-            });
-          }, child: Text("SWITCH"))
-        ],
+        centerTitle: true,
+        title: const Text(
+          "Busser – Трансфер-Такси",
+          style: TextStyle(
+            fontWeight: FontWeight.w600
+          ),
+        ),
       ),
       extendBody: true,
       bottomNavigationBar: Visibility(
