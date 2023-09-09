@@ -12,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,14 +44,14 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    final _pageController = PageController(initialPage: 2);
-    final _controller = NotchBottomBarController(index: 2);
+    final pageController = PageController(initialPage: 2);
+    final controller = NotchBottomBarController(index: 2);
 
     final List<Widget> bottomBarPages = [
-      InfoScreen(),
-      BookingsScreen(),
-      MainScreen(),
-      ProfileScreen()
+      const InfoScreen(),
+      const BookingsScreen(),
+      const MainScreen(),
+      const ProfileScreen()
     ];
 
     return Scaffold(
@@ -77,7 +76,7 @@ class _MainPageState extends State<MainPage> {
           blurFilterY: 2,
           blurOpacity: 0.1,
           durationInMilliSeconds: 300,
-          notchBottomBarController: _controller,
+          notchBottomBarController: controller,
           color: Colors.black,
           showLabel: false,
           notchColor: Colors.black,
@@ -128,12 +127,12 @@ class _MainPageState extends State<MainPage> {
             ),
           ],
           onTap: (index) {
-            _pageController.jumpToPage(index);
+            pageController.jumpToPage(index);
           },
         ),
       ),
       body: PageView(
-        controller: _pageController,
+        controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
         children: List.generate(
             bottomBarPages.length, (index) => bottomBarPages[index]),
