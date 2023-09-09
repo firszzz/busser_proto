@@ -66,8 +66,10 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const SizedBox(
+          height: 100,
+        ),
         SvgPicture.asset(
           'assets/busser_logo.svg',
           height: 250,

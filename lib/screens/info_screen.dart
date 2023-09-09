@@ -14,8 +14,10 @@ class _InfoScreenState extends State<InfoScreen> {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(
+            height: 100,
+          ),
           FractionallySizedBox(
             widthFactor: 0.75,
             child: Container(
