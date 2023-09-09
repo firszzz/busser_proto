@@ -11,51 +11,27 @@ class InfoScreen extends StatefulWidget {
 class _InfoScreenState extends State<InfoScreen> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 100,
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        title: const Text(
+          "Информация",
+          style: TextStyle(
+              fontWeight: FontWeight.w600
           ),
-          FractionallySizedBox(
-            widthFactor: 0.75,
-            child: Container(
-              height: 60,
-              decoration: BoxDecoration(
-                color: Colors.black87,
-                border: Border.all(
-                    width: 2.5
-                ),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  _launchUrl(Uri.parse("https://busser.su/rules"));
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black54,
-                  elevation: 0,
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                ),
-                child: const Text(
-                  "Правила перевозок",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 100,
             ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
+            FractionallySizedBox(
+              widthFactor: 0.75,
+              child: Container(
                 height: 60,
                 decoration: BoxDecoration(
                   color: Colors.black87,
@@ -66,7 +42,7 @@ class _InfoScreenState extends State<InfoScreen> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    _launchUrl(Uri.parse("https://busser.su/directions"));
+                    _launchUrl(Uri.parse("https://busser.su/rules"));
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black54,
@@ -75,7 +51,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     shadowColor: Colors.transparent,
                   ),
                   child: const Text(
-                    "Расписание",
+                    "Правила перевозок",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -83,7 +59,77 @@ class _InfoScreenState extends State<InfoScreen> {
                   ),
                 ),
               ),
-              Container(
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.black87,
+                    border: Border.all(
+                        width: 2.5
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _launchUrl(Uri.parse("https://busser.su/directions"));
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.black54,
+                      elevation: 0,
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                    ),
+                    child: const Text(
+                      "Расписание",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.black87,
+                    border: Border.all(
+                        width: 2.5
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _launchUrl(Uri.parse("https://busser.su/tariffs"));
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.black54,
+                      elevation: 0,
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                    ),
+                    child: const Text(
+                      "Тарифы",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            FractionallySizedBox(
+              widthFactor: 0.75,
+              child: Container(
                 height: 60,
                 decoration: BoxDecoration(
                   color: Colors.black87,
@@ -94,7 +140,7 @@ class _InfoScreenState extends State<InfoScreen> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    _launchUrl(Uri.parse("https://busser.su/tariffs"));
+                    _launchUrl(Uri.parse("https://zakaz.busser.su/dogovor-oferty"));
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black54,
@@ -103,7 +149,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     shadowColor: Colors.transparent,
                   ),
                   child: const Text(
-                    "Тарифы",
+                    "Договор оферты",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -111,91 +157,57 @@ class _InfoScreenState extends State<InfoScreen> {
                   ),
                 ),
               ),
-            ],
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          FractionallySizedBox(
-            widthFactor: 0.75,
-            child: Container(
-              height: 60,
-              decoration: BoxDecoration(
-                color: Colors.black87,
-                border: Border.all(
-                    width: 2.5
-                ),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  _launchUrl(Uri.parse("https://zakaz.busser.su/dogovor-oferty"));
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black54,
-                  elevation: 0,
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                ),
-                child: const Text(
-                  "Договор оферты",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
             ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              InkWell(
-                child: Image.asset(
-                    "assets/website.png"
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InkWell(
+                  child: Image.asset(
+                      "assets/website.png"
+                  ),
+                  onTap: () {
+                    _launchUrl(Uri.parse("https://busser.su"));
+                  },
                 ),
-                onTap: () {
-                  _launchUrl(Uri.parse("https://busser.su"));
-                },
-              ),
-              InkWell(
-                child: Image.asset(
-                    "assets/telegram.png"
+                InkWell(
+                  child: Image.asset(
+                      "assets/telegram.png"
+                  ),
+                  onTap: () {
+                    _launchUrl(Uri.parse("https://busser.su"));
+                  },
                 ),
-                onTap: () {
-                  _launchUrl(Uri.parse("https://busser.su"));
-                },
-              ),
-              InkWell(
-                child: Image.asset(
-                    "assets/whatsapp.png"
+                InkWell(
+                  child: Image.asset(
+                      "assets/whatsapp.png"
+                  ),
+                  onTap: () {
+                    _launchUrl(Uri.parse("https://busser.su"));
+                  },
                 ),
-                onTap: () {
-                  _launchUrl(Uri.parse("https://busser.su"));
-                },
-              ),
-              InkWell(
-                child: Image.asset(
-                    "assets/vk.png"
+                InkWell(
+                  child: Image.asset(
+                      "assets/vk.png"
+                  ),
+                  onTap: () {
+                    _launchUrl(Uri.parse("https://busser.su"));
+                  },
                 ),
-                onTap: () {
-                  _launchUrl(Uri.parse("https://busser.su"));
-                },
-              ),
-              InkWell(
-                child: Image.asset(
-                    "assets/instagram.png"
+                InkWell(
+                  child: Image.asset(
+                      "assets/instagram.png"
+                  ),
+                  onTap: () {
+                    _launchUrl(Uri.parse("https://busser.su"));
+                  },
                 ),
-                onTap: () {
-                  _launchUrl(Uri.parse("https://busser.su"));
-                },
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

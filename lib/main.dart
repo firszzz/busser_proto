@@ -55,16 +55,6 @@ class _MainPageState extends State<MainPage> {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        title: const Text(
-          "Busser – Трансфер-Такси",
-          style: TextStyle(
-            fontWeight: FontWeight.w600
-          ),
-        ),
-      ),
       extendBody: true,
       bottomNavigationBar: Visibility(
         visible: bottomBarVisible,
